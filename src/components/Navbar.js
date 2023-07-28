@@ -15,25 +15,28 @@ const menus = [
     }
 ]
 
-function Menu(){
+function Menu({menuTitle, menuUrl = "http://localhost"}){
     return(
-        <ul>
-            {menus.map((menu) => {
-                return(
-                    <li><a href={menu.menuUrl}>{menu.title}</a></li>
-                )
-            })}
-        </ul>
+            <li><a href={menuUrl}>{menuTitle}</a></li>
     )
 }
 
-export default function Navbar(){
+export function Navbar(){
     return(
         <header>
             <div className="container">
                 <h1>My Spotify</h1>
                 <nav>
-                   <Menu/>
+                    <ul>
+                        {menus.map((menu) => {
+                           return (
+                               <Menu
+                                   menuTitle={menu.title}
+                                   menuUrl={menu.title}
+                               />
+                           )
+                        })}
+                    </ul>
                 </nav>
             </div>
         </header>
