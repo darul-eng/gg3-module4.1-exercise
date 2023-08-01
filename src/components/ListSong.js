@@ -1,6 +1,6 @@
 import '../styles/ListSong.css'
 
-const songs = [
+export const songs = [
     {name: "Song 1", isPlayed: true},
     {name: "Song 2", isPlayed: false},
     {name: "Song 3", isPlayed: true}
